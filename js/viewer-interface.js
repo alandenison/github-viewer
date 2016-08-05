@@ -11,6 +11,6 @@ $(document).ready(function() {
   // };
   var user = "alandenison"
   viewer = new Viewer(user)
- viewer.getRepos(user);
+ viewer.find(user);
 
 });
