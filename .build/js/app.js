@@ -7,6 +7,7 @@ var userName;
 Viewer.prototype.getRepos = function(userName) {
   $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(response){
     for(i=0; i<response.length; i++) {
+      $("#results").append("<li>" + response[i].name + "</li>");
     console.log(response[i].name);
   };
   }).fail(function(error){
@@ -33,7 +34,7 @@ $(document).ready(function() {
   // };
   var user = "alandenison"
   viewer = new Viewer(user)
-  viewer.getRepos(user);
+ viewer.getRepos(user);
 
 });
 
