@@ -20,5 +20,14 @@
     "gulp-util": "^3.0.7",
     "jshint": "^2.9.2",
     "vinyl-source-stream": "^1.1.0"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alandenison/github-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alandenison/github-viewer/issues"
+  },
+  "homepage": "https://github.com/alandenison/github-viewer#readme"
 }
