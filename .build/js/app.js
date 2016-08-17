@@ -3,14 +3,14 @@ exports.apiKey = "9e02afa0c31ec13b1caa1d0788f2b56808449878";
 
 },{}],2:[function(require,module,exports){
 var apiKey = require('./../.env').apiKey;
-function Viewer(userName) {
-  this.user = userName;
+function Viewer() {
 }
 
 Viewer.prototype.getRepos = function(userName) {
-  $.get('https://api.github.com/users/' + this.user + '/repos?access_token=' + apiKey).then(function(response){
+  $.get('https://api.github.com/users/' + this.userName + '/repos?access_token=' + apiKey).then(function(response){
     for(i=0; i<response.length; i++) {
       $("#results").append("<li>" + response[i].name + "</li>");
+      console.log("end"+this.user);
   }
   }).fail(function(error){
     console.log(error.responseJSON.message);
@@ -29,10 +29,12 @@ var Viewer = require('./../js/viewer.js').viewerModule;
 
 $(document).ready(function() {
   $("#find").click(function() {
+    var user = new Viewer();
     $("#results").text("");
-    var user = $("#user-name");
-    viewer = new Viewer(user);
-    viewer.getRepos();
+    var userName = $("#user-name").val();
+    user.getRepos(userName);
+
+    console.log(userName);
   });
 });
 
