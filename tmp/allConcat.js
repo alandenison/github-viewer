@@ -8,7 +8,5 @@ $(document).ready(function() {
     $("#results").text("");
     var userName = $("#user-name").val();
     user.getRepos(userName);
-
-    console.log(userName);
   });
 });
